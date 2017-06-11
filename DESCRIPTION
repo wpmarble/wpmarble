@@ -1,0 +1,10 @@
+Package: wpmarble
+Title: Functions I Find Useful
+Version: 0.0.0.9000
+Authors@R: person("William", "Marble", email = "wpmarble@stanford.edu", role = c("aut", "cre"))
+Description: Convenience package for functions that I often find myself copy-pasting into new project directories.
+Depends: R (>= 3.3.2)
+License: MIT
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 6.0.1.9000
