@@ -2,7 +2,7 @@
 % Please edit documentation in R/functions.R
 \name{position_dodgev}
 \alias{position_dodgev}
-\title{Adjust position by dodging overlaps to the side. All code written by Jared Lander available from 
+\title{Adjust position by dodging overlaps to the side. All code written by Jared Lander available from
 https://github.com/jaredlander/coefplot/blob/master/R/position.r/}
 \usage{
 position_dodgev(height = NULL)
@@ -13,6 +13,7 @@ elements. This is useful when you want to align narrow geoms with wider
 geoms. See the examples for a use case.}
 }
 \description{
-Adjust position by dodging overlaps to the side. All code written by Jared Lander available from 
+Adjust position by dodging overlaps to the side. All code written by Jared Lander available from
 https://github.com/jaredlander/coefplot/blob/master/R/position.r/
 }
+\concept{position adjustments}
