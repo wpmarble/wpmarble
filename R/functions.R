@@ -244,10 +244,10 @@ vcovCluster <- function(
 #' @param pkg A packages to install
 #' @param ... arguments passed to install.packages()
 #' @export
-check_then_install = function(pkg, ...){
+check_then_install = Vectorize(function(pkg, ...){
   if(pkg %in% rownames(installed.packages())){
     return(paste0(pkg, ' is already installed!'))
   } else {
     install.packages(pkg, ...)
   }
-}
+}, "pkg")
