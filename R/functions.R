@@ -238,8 +238,6 @@ vcovCluster <- function(
 
 # check_then_install ------------------------------------------------------
 
-# compute clustered standard errors
-# updated to handle missing data automatically
 #' Modified install package
 #'
 #' Checks whether the list of packages is installed. If not, then it installs it.
