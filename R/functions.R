@@ -238,8 +238,7 @@ vcovCluster <- function(
 
 # check_then_install ------------------------------------------------------
 
-# compute clustered standard errors
-# updated to handle missing data automatically
+
 #' Modified install package
 #'
 #' Checks whether the list of packages is installed. If not, then it installs it.
@@ -253,3 +252,22 @@ check_then_install = function(pkg, ...){
     install.packages(pkg, ...)
   }
 }
+
+
+
+
+# dens_at_grid ------------------------------------------------------------
+
+
+#' Evaluate density at user-specified grid
+#'
+#' Estimates the density at a grid of points specified by the user
+#' @param point grid of points at which to evaluate the density of data.
+#' @param data data with which to estimate the density.
+#' @param ... arguments passed to density()
+#' @export
+dens_at_grid = Vectorize(function(point, data, ...){
+  stopifnot(length(point) == 1)
+  density(data, from = point, to = point, n = 1, ...)$y
+}, "point")
+
