@@ -238,19 +238,23 @@ vcovCluster <- function(
 
 # check_then_install ------------------------------------------------------
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> e1292281a87c12a4c631a6ded8695615d87301ce
 #' Modified install package
 #'
 #' Checks whether the list of packages is installed. If not, then it installs it.
 #' @param pkg A packages to install
 #' @param ... arguments passed to install.packages()
 #' @export
-check_then_install = function(pkg, ...){
+check_then_install = Vectorize(function(pkg, ...){
   if(pkg %in% rownames(installed.packages())){
     return(paste0(pkg, ' is already installed!'))
   } else {
     install.packages(pkg, ...)
   }
+<<<<<<< HEAD
 }
 
 
@@ -271,3 +275,6 @@ dens_at_grid = Vectorize(function(point, data, ...){
   density(data, from = point, to = point, n = 1, ...)$y
 }, "point")
 
+=======
+}, "pkg")
+>>>>>>> e1292281a87c12a4c631a6ded8695615d87301ce
