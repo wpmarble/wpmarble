@@ -1,3 +1,21 @@
+
+# merge w/ flag -------------------------------------------------------------------
+
+# via mathilde
+stata_merge <- function(x, y, name) {
+  require(dplyr)
+  x <- x %>% mutate(new1 = 1)
+  y <- y %>% mutate(new2 = 2)
+  df <- merge(x, y, by = name, all = TRUE)
+  df <- df %>%
+    mutate(new1 = ifelse(is.na(new1), 0, new1)) %>%
+    mutate(new2 = ifelse(is.na(new2), 0, new2)) %>%
+    mutate(merge_flag = new1 + new2) %>%
+    select(-new1,-new2)
+  return(df)
+}
+
+
 # ggplot functions for coefplots ------------------------------------------
 
 
@@ -238,10 +256,7 @@ vcovCluster <- function(
 
 # check_then_install ------------------------------------------------------
 
-<<<<<<< HEAD
 
-=======
->>>>>>> e1292281a87c12a4c631a6ded8695615d87301ce
 #' Modified install package
 #'
 #' Checks whether the list of packages is installed. If not, then it installs it.
@@ -254,8 +269,7 @@ check_then_install = Vectorize(function(pkg, ...){
   } else {
     install.packages(pkg, ...)
   }
-<<<<<<< HEAD
-}
+}, "pkg")
 
 
 
@@ -269,12 +283,9 @@ check_then_install = Vectorize(function(pkg, ...){
 #' @param point grid of points at which to evaluate the density of data.
 #' @param data data with which to estimate the density.
 #' @param ... arguments passed to density()
-#' @export
+
 dens_at_grid = Vectorize(function(point, data, ...){
   stopifnot(length(point) == 1)
   density(data, from = point, to = point, n = 1, ...)$y
 }, "point")
 
-=======
-}, "pkg")
->>>>>>> e1292281a87c12a4c631a6ded8695615d87301ce
