@@ -19,7 +19,7 @@ stata_merge <- function(x, y, name) {
 # ggplot functions for coefplots ------------------------------------------
 
 
-library(ggplot2)
+require(ggplot2)
 collidev <- function(data, height = NULL, name, strategy, check.height = TRUE) {
   # Determine height
   if (!is.null(height)) {
